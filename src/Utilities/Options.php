@@ -53,12 +53,7 @@ class Options
     /**
      * @var string
      */
-    private string $clientId;
-
-    /**
-     * @var string
-     */
-    private string $clientSecret;
+    private string $apiToken;
 
     /**
      * @var string
@@ -75,8 +70,7 @@ class Options
     public function __construct(array $options)
     {
         V::doValidate(V::keySet(
-            V::key('client_id', V::stringType()::notEmpty()),
-            V::key('client_secret', V::stringType()::notEmpty()),
+            V::key('api_token', V::stringType()->notEmpty()),
             V::keyOptional('debug', V::boolType()),
             V::keyOptional('region', V::in(['us', 'eu'])),
             V::keyOptional('handler', V::callableType()),
@@ -86,8 +80,7 @@ class Options
 
         $this->region = $options['region'] ?? 'us';
 
-        $this->setClientId($options['client_id']);
-        $this->setClientSecret($options['client_secret']);
+        $this->setApiToken($options['api_token']);
 
         $this->setDebug($options['debug'] ?? false);
         $this->setServer($this->region);
@@ -198,49 +191,25 @@ class Options
     // ------------------------------------------------------------------------------
 
     /**
-     * set client id
+     * set api token
      *
-     * @param string $clientId
+     * @param string $apiToken
      */
-    public function setClientId(string $clientId): void
+    public function setApiToken(string $apiToken): void
     {
-        $this->clientId = $clientId;
+        $this->apiToken = $apiToken;
     }
 
     // ------------------------------------------------------------------------------
 
     /**
-     * set client secret
-     *
-     * @param string $clientSecret
-     */
-    public function setClientSecret(string $clientSecret): void
-    {
-        $this->clientSecret = $clientSecret;
-    }
-
-    // ------------------------------------------------------------------------------
-
-    /**
-     * get client id
+     * get api token
      *
      * @return string
      */
-    public function getClientId(): string
+    public function getApiToken(): string
     {
-        return $this->clientId;
-    }
-
-    // ------------------------------------------------------------------------------
-
-    /**
-     * get client secret
-     *
-     * @return string
-     */
-    public function getClientSecret(): string
-    {
-        return $this->clientSecret;
+        return $this->apiToken;
     }
 
     // ------------------------------------------------------------------------------
