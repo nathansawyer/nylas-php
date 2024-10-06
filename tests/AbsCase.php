@@ -59,7 +59,7 @@ class AbsCase extends TestCase
 
         $options = [
             'debug'         => $this->faker->randomElement([true, false]),
-            'region'        => $this->faker->randomElement(['oregon', 'ireland']),
+            'region'        => $this->faker->randomElement(['us', 'eu']),
             'log_file'      => __DIR__.'/test.log',
             'client_id'     => $this->faker->uuid,
             'client_secret' => $this->faker->password,

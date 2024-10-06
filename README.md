@@ -73,7 +73,7 @@ $options =
     'client_secret'    => 'your client secret' // required
     
     'debug'            => true,
-    'region'           => 'oregon', // server region, can be oregon of United States, ireland of Europe, default is oregon
+    'region'           => 'us', // server region, can be us for United States, eu for Europe, default is us
     'log_file'         => dirname(__FILE__) . '/test.log',  // a file path or a resource handler
     'access_token'     => 'your access token',
 ];

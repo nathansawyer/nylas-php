@@ -78,13 +78,13 @@ class Options
             V::key('client_id', V::stringType()::notEmpty()),
             V::key('client_secret', V::stringType()::notEmpty()),
             V::keyOptional('debug', V::boolType()),
-            V::keyOptional('region', V::in(['oregon', 'ireland'])),
+            V::keyOptional('region', V::in(['us', 'eu'])),
             V::keyOptional('handler', V::callableType()),
             V::keyOptional('log_file', $this->getLogFileRule()),
             V::keyOptional('access_token', V::stringType()::notEmpty()),
         ), $options);
 
-        $this->region = $options['region'] ?? 'oregon';
+        $this->region = $options['region'] ?? 'us';
 
         $this->setClientId($options['client_id']);
         $this->setClientSecret($options['client_secret']);
@@ -127,9 +127,9 @@ class Options
      */
     public function setServer(?string $region = null): void
     {
-        $region = $region ?? 'oregon';
+        $region = $region ?? 'us';
 
-        $this->server = API::SERVER[$region] ?? API::SERVER['oregon'];
+        $this->server = API::SERVER[$region] ?? API::SERVER['us'];
     }
 
     // ------------------------------------------------------------------------------
@@ -139,9 +139,9 @@ class Options
      */
     public function setSchedulerServer(?string $region = null): void
     {
-        $region = $region ?? 'oregon';
+        $region = $region ?? 'us';
 
-        $this->server = API::SERVER_SCHEDULER[$region] ?? API::SERVER_SCHEDULER['oregon'];
+        $this->server = API::SERVER_SCHEDULER[$region] ?? API::SERVER_SCHEDULER['us'];
     }
 
     // ------------------------------------------------------------------------------
