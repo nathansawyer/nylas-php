@@ -1,9 +1,4 @@
-<div align="center">
-  <img width="635" height="217" src="media/nylas-php.png" />
-</div>
-
-# Nylas PHP SDK (latest 6.0.0)
-
+# Nylas PHP SDK
 PHP SDK for the Nylas REST API (V3.0) https://developer.nylas.com/docs/v3/
 </br>
 This is a simplified pack for authentication and sending mail with Nylas API v3.
