@@ -54,7 +54,7 @@ class Native
      */
     public function sendAuthorization(array $params): array
     {
-        $params['client_id'] = $this->options->getClientId();
+        $params['api_token'] = $this->options->getApiToken();
 
         V::doValidate($this->getAuthRules($params), $params);
 
@@ -82,8 +82,7 @@ class Native
 
         $params = [
             'code'          => $code,
-            'client_id'     => $this->options->getClientId(),
-            'client_secret' => $this->options->getClientSecret(),
+            'api_token'     => $this->options->getApiToken(),
         ];
 
         return $this->options
@@ -109,8 +108,7 @@ class Native
         V::doValidate(V::email(), $email);
 
         $params = [
-            'client_id'     => $this->options->getClientId(),
-            'client_secret' => $this->options->getClientSecret(),
+            'api_token'     => $this->options->getApiToken(),
             'email_address' => $email,
         ];
 
