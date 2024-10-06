@@ -25,10 +25,11 @@ class API
      * nylas common server list array
      *
      * @see https://developer.nylas.com/docs/the-basics/platform/data-residency/
+     * @change 2024/10/06 NS
      */
     public const SERVER = [
-        'oregon'  => 'https://api.nylas.com',
-        'ireland' => 'https://ireland.api.nylas.com',
+        'us'  => 'https://api.us.nylas.com',
+        'eu'  => 'https://api.eu.nylas.com',
     ];
 
     // ------------------------------------------------------------------------------
@@ -39,8 +40,8 @@ class API
      * @see https://developer.nylas.com/docs/the-basics/platform/data-residency/
      */
     public const SERVER_SCHEDULER = [
-        'oregon'  => 'https://api.schedule.nylas.com',
-        'ireland' => 'https://ireland.api.schedule.nylas.com',
+        'us'  => 'https://api.schedule.nylas.com',
+        'eu' => 'https://eu.api.schedule.nylas.com',
     ];
 
     // ------------------------------------------------------------------------------

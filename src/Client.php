@@ -57,8 +57,7 @@ class Client
      *                       'debug'            => bool,
      *                       'region'           => 'us',
      *                       'log_file'         => 'log file path',
-     *                       'client_id'        => 'required',
-     *                       'client_secret'    => 'required',
+     *                       'api_token'        => 'required',
      *                       'access_token'     => '',
      *                       ]
      */

@@ -55,11 +55,11 @@ class Hosted
      */
     public function authenticateUser(array $params): string
     {
-        $params['client_id'] = $this->options->getClientId();
+        $params['api_token'] = $this->options->getApiToken();
 
         V::doValidate(V::keySet(
             V::key('scopes', V::stringType()::notEmpty()),
-            V::key('client_id', V::stringType()::notEmpty()),
+            V::key('api_token', V::stringType()::notEmpty()),
             V::key('redirect_uri', V::url()),
             V::key('response_type', V::in(['code', 'token'])),
             V::keyOptional('state', V::stringType()::length(1, 255)),
@@ -94,8 +94,7 @@ class Hosted
         $params = [
             'code'          => $code,
             'grant_type'    => 'authorization_code',
-            'client_id'     => $this->options->getClientId(),
-            'client_secret' => $this->options->getClientSecret(),
+            'api_token'     => $this->options->getApiToken(),
         ];
 
         return $this->options
