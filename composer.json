@@ -1,11 +1,14 @@
 {
-    "name": "lanlin/nylas-php",
-    "description": "Nylas PHP SDK (api version 2.7)",
+    "name": "nathansawyer/nylas-php",
+    "description": "Nylas PHP SDK (api version 3.0)",
     "license": "MIT",
     "authors" : [
         {
           "name": "lanlin",
           "email": "lanlin1987@gmail.com"
+        },
+        {
+            "name": "nathansawyer"
         }
     ],
     "require": {
@@ -14,25 +17,5 @@
         "guzzlehttp/guzzle": ">=7.7",
         "respect/validation": "^2.2",
         "zbateson/mail-mime-parser": "^2.4"
-    },
-    "require-dev": {
-        "fakerphp/faker": "^1.23",
-        "phpunit/phpunit": "^10.2",
-        "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^6.4",
-        "roave/security-advisories": "dev-latest"
-    },
-    "autoload": {
-        "psr-4": {
-            "Nylas\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit --configuration tests/phpunit.xml --do-not-cache-result"
     }
 }
